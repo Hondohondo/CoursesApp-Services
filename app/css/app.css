@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*ngCloak to avoid a flash of unbound html*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none; }
+
+
+body {
+    text-rendering: optimizeLegibility;
+    line-height: 1.7;
+    /*background-color: saddlebrown;*/
+    background-color: #f7f7f7;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Verdana;
+}
+form label,
+form input {
+    display: block;
+    padding: 2px;
+}
+
+form label {
+    font-size: 18px;
+    color: #555;
+}
+
+
+form input {
+    font-size: 17px;
+    display: block;
+    color: cadetblue;
+    /*padding: 10px;*/
+    padding: 12px 17px;
+    margin-bottom: 5px;
+    width: 300px;
+    /*width: 100%;*/
+    border: none;
+    border-radius: 4px;
+    /*border-radius: 1px;*/
+    background-color: #f2f2f2;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+}
+
+.newcourse {
+    color: seagreen;
+
+}
+
+.createcourse {
+    color: beige;
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.createcourse:hover {
+    color: ghostwhite;
+}
+
+.container-form {
+    /*margin: 0 auto;*/
+    /*max-width: 500px;*/
+    max-width: 350px;
+    background-color: #fff;
+    box-shadow: 0 25px 80px 20px rgba(0,0,0,0.06);
+    /*padding: 50px 70px;*/
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+form input::-webkit-input-placeholder {
+    color: #bbb;
+    font-size: 17px;
+}
+
+
+form input:focus {
+    outline: none;
+    border-bottom: 3px solid #55c57a;
+}
+
+
+button {
+    background-color: #777;
+    color: beige;
+    font-size: 16px;
+    padding: 14px 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 400;
+    margin-right: 10px;
+    border: none;
+    /*box-shadow: .5px .5px rgba(0,0,0,.8);*/
+    /*width: 75px;*/
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+button:focus {
+    outline: none;
+}
+button:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+fieldset {
+    /*display: none;*/
+    background-color: transparent;
+    border: none;
+}
+.blue {
+    color: cadetblue;
+}
+
+.input-small {
+    margin-bottom: 35px;
+}
+
+.container {
+    margin: 10px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+ul li {
+    list-style: none;
+}
+
+h3 {
+    padding: 10px;
+    font-size: 26px;
+}
+
+h6 {
+    margin-bottom: 5px;
+    font-size: 14px;
+
+    /*text-decoration-line: underline;*/
+    /*text-underline: fuchsia;*/
+}
+
+.well {
+    text-align: center;
+    background-color: darkslategray;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 2px  darkblue;
+    margin-bottom: 10px;
+    height: 50%;
+    /*float: left;*/
+    /*margin-right: 10px;*/
+    /*width: 5%;*/
+    /*vertical-align: center;*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+
+}
+
+
+
+.icon-chevron-up,
+.icon-chevron-down {
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    background-color: darkslategray;
+}
+
+.icon-chevron-up {
+    font-weight: 900;
+    font-size: 17.5px;
+}
+
+.badge {
+    color: antiquewhite;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+    background-color: cadetblue;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.session {
+    /*width: 100%;*/
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    /*justify-content: space-around;*/
+    /*justify-content: space-evenly;*/
+    /*justify-items: center;*/
+    /*flex-shrink: revert;*/
+}
+
+.span4 {
+    /*float: left;*/
+    /*color: antiquewhite;*/
+    color: bisque;
+    background-color: darkslategray;
+    padding: 20px;
+    box-shadow: 1px 1px 1px 2px  darkblue;
+    border-radius: 5px;
+    width: 85%;
+}
+
+.title {
+    font-size: 20px;
+}
+
+
+.nav li{
+    background-color: seagreen;
+    color: ghostwhite;
+    text-decoration: none;
+    list-style: none;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.row {
+    margin: 10px;
+}

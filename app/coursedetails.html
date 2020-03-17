@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--(courseApp)this is the module that runs this page-->
+<html lang="en" ng-app="courseApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Course Registration</title>
+    <link rel="stylesheet" href="css/app.css">
+
+</head>
+<body ng-cloak>
+
+
+
+<div class="container">
+
+    <div class="navbar">
+        <ul class="nav">
+                <li><a href="newcourse.html" class="createcourse">Create Course</a></li>
+        </ul>
+    </div>
+<!--  this Coursecontroller responsible for handling info about courses-->
+    <div ng-controller="CourseController" style="padding-left: 20px; padding-right: 20px">
+        <img ng-src="{{course.imageUrl}}" alt="Angular">
+        <div class="row">
+            <div class="span1">
+                <h2>{{course.name | uppercase}}</h2>
+<!--                <h2>{{course.name}}</h2>-->
+<!--                <h2 ng-bind="course.name"></h2>-->
+<!--                <h2 ng-style="mystyle" ng-bind-template="{{course.name}} {{course.date}}"></h2>-->
+<!--                <h2 ng-class="myclass" ng-bind-template="{{course.name}} {{course.date}}"></h2>-->
+            </div>
+        </div>
+
+<!--        <button class="btn" ng-disabled="buttonDisabled">Disabled</button>-->
+<!--        <div ng-bind-html="snippet">Some Title</div>-->
+<!--        <h2 ng-show="boolValue">Show This</h2>-->
+<!--        <h2 ng-hide="boolValue">Hide This</h2>-->
+<!--        <div ng-non-bindable>{{1+2}}</div>-->
+
+
+        <div class="row">
+            <div class="span2">
+                <div><strong>Date:</strong> {{course.date}}</div>
+                <div><strong>ID:</strong> {{course.id}}</div>
+
+            </div>
+            <div class="span3">
+                <address>
+                    <strong>Found at:</strong> <br>
+                    {{course.location.address}} <br>
+                    {{course.location.where}} <br>
+                </address>
+            </div>
+        </div>
+
+        <div>
+            {{ 3.145667 | number:3}}
+            {{34 | currency}}
+        </div>
+<!--        {{3*10}}-->
+
+        <hr>
+
+        <h3>Sessions</h3>
+        <div class="input-small">
+            Order By:
+            <select ng-model="sortorder">
+                <option value="name" selected>Name</option>
+                <option value="-upVoteCount" >Votes</option>
+                <!--            <option value="name" >Name</option>-->
+            </select>
+
+            Show:
+            <select ng-model="query.level" class="input-medium">
+                <option value="" selected>All</option>
+                <option value="introductory" selected>Introductory</option>
+                <option value="intermediate" selected>Intermediate</option>
+                <option value="advanced" selected>Advanced</option>
+            </select>
+        </div>
+
+        <ul>
+            <li ng-repeat="session in course.sessions | orderBy:sortorder | limitTo:4 | filter:query">
+
+                <div class="row session">
+                    <div class="span0 well votingWidget">
+                        <div class="votingButton" ng-click="upVoteSession(session)">
+                            <i class="icon-chevron-up icon-white"> <strong>&gt;</strong></i> <br>
+<!--                            {{session.upVoteCount}}-->
+                        </div>
+                        <div class="badge badge-inverse">
+                            <div>{{session.upVoteCount}}</div>
+                        </div>
+                        <div class="votingButton" ng-click="downVoteSession(session)">
+                            <div class="icon-chevron-down"> <strong>&lt;</strong>  </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h4 class="title">{{session.name}}</h4>
+                        <h6>{{session.creatorName}}</h6>
+                        <span>Duration: {{session.duration | durations}}</span><br>
+                        <span>Level: {{session.level}}</span><br>
+<!--                        <span>Duration: {{session.duration | durations}}</span>-->
+                        <p>{{session.abstract}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+
+
+
+
+<!--angular library-->
+<script src="lib/angular/angular.js"></script>
+
+<script src="lib/angular/angular-sanitize.js"></script>
+
+<!--starting script that loads up the module for the application-->
+<script src="js/app.js"></script>
+<!--Controller-->
+<script src="js/controllers/CourseController.js"></script>
+<!--Filter-->
+<script src="js/filters.js"></script>
+<!--Services-->
+<script src="js/services/CourseData.js"></script>
+
+</body>
+</html>

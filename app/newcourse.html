@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--(courseApp)this is the module that runs this page-->
+<html lang="en" ng-app="courseApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Course Registration</title>
+    <link rel="stylesheet" href="css/app.css">
+
+</head>
+<body ng-cloak>
+
+<div class="container">
+
+    <div class="navbar">
+        <ul class="nav">
+<!--            <li><a href="newcourse.html">Create Course</a></li>-->
+            <li><a href="newcourse.html" class="createcourse">Create Course</a></li>
+        </ul>
+    </div>
+
+    <style>input.ng-invalid.ng-dirty {background-color: lightpink}</style>
+
+    <div ng-controller="EditCourseController" style="padding-left: 20px; padding-right: 20px">
+    <div class="container-form">
+        <h1 class="newcourse">New Course</h1>
+
+<!--        <hr>-->
+<!--        <div>{{course.name}}</div>-->
+        <form name="newCourseForm">
+            <fieldset>
+                <label for="courseName">Course Name:</label>
+                <input type="text" id="courseName" required ng-model="course.name" placeholder="Name of your course...">
+                <label for="courseDate">Course Date:</label>
+                <input type="text" id="courseDate" required ng-model="course.date" placeholder="format (mm/dd/yyyy)...">
+                <label for="courseTime">Course Time:</label>
+                <input type="text" id="courseTime" ng-model="course.time" placeholder="Start and end time...">
+                <label for="courseLocation">Course Location:</label>
+                <input type="text" id="courseLocation" ng-model="course.location.address" placeholder="Address of the course...">
+<!--                <br>-->
+<!--                <input class="small" type="text" id="courseCity" placeholder="City...">-->
+<!--                <input class="small" type="text" id="courseProvince" placeholder="City...">-->
+<div>{{course.name}}</div>
+                <label for="courseImageUrl">Image</label>
+                <input type="url" id="courseImageUrl" ng-model="course.imageUrl" class="large" placeholder="Url of image...">
+            </fieldset>
+
+            <img ng-src="{{course.imageUrl}}" src="" alt="">
+            <br>
+            <br>
+
+            <button type="submit" ng-disabled="newCourseForm.$invalid" ng-click="saveCourse(course, newCourseForm)" class="primary">Save</button>
+            <button type="button" ng-click="cancelEdit()" class="default">Cancel</button>
+        </form>
+    </div>
+    </div>
+
+</div>
+
+
+<!--angular library-->
+<script src="lib/angular/angular.js"></script>
+
+<script src="lib/angular/angular-sanitize.js"></script>
+
+<!--starting script that loads up the module for the application-->
+<script src="js/app.js"></script>
+<!--Controller-->
+<script src="js/controllers/CourseController.js"></script>
+<script src="js/controllers/EditCourseController.js"></script>
+<!--Filter-->
+<script src="js/filters.js"></script>
+
+</body>
+</html>
